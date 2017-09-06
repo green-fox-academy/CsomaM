@@ -1,0 +1,47 @@
+body {
+    position: absolute;  
+    background-image: url("topography.png");
+    margin: 0px;
+
+}
+
+a {
+    top: -65%;
+    position: relative;
+    color: #ff0099;
+}
+
+h1, h2 {
+    line-height: 200%;
+    font-weight: strong;
+}
+
+#aperture {
+    height: 85%;
+    position: relative;
+    padding-top: 0.5%;
+    padding-right: 100%;
+ }
+
+#subtitle {
+    color: #ff0099;
+}
+
+div, nav {
+    position: relative;
+    padding-left: 10%;
+    padding-right: 10%;
+    /* text-align: center - this is how you center content on a page */
+}
+
+nav {   
+    font-family: 'Ubuntu', sans-serif;
+    background-color: #333333;
+    text-align: right;
+    word-spacing: 30px;
+    height: 55px;
+}
+
+* {
+    font-family: "consolas", courier;
+}

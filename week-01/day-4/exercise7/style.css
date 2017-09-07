@@ -1,0 +1,26 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+main {
+    width: 200px;
+    color: blue;
+}
+
+.container {
+    color: black;
+}
+
+main div:nth-child(1), div:nth-child(2) {
+    border-style: solid;
+    border-color: green;
+    border-width: 1px;
+    font-weight: bold;
+}
+
+p {
+    margin-bottom: 20px;
+    margin-top: 20px;
+    background-color: yellow;
+}

@@ -1,0 +1,35 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+div {
+    border-style: solid;
+    border-width: 2px;
+    border-color: #5793F5;
+    height: 125px;
+    width: 870px;
+    margin: 8px;
+}
+
+div p:nth-child(1) {
+    margin-left: 20px;
+}
+
+div p:nth-child(10) {
+    margin-right: 20px;
+}
+
+p {
+    padding: 30px;
+    margin: 30px 10px 30px 10px;
+    background-color: #5793F5;
+    display: inline-flex; 
+}
+main :nth-child(2) > p {
+    background-color: #643579;
+}
+
+div + div {
+    background-color: #FF6347;
+}

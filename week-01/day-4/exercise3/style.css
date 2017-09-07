@@ -1,15 +1,16 @@
-
 * {
     margin: 0px;
     padding: 0px;
 }
 
 div {
-    margin-bottom: 20px;
     padding: 10px;
+    margin-bottom: 5px;
     width: 290px;
-    height: 400px;
-    background-color: #4285F4;
+    height: 200px;;
+    border-style: solid;
+    border-color: #4285F4;
+    border-width: 10px;
 }
 
 p {
@@ -21,17 +22,10 @@ p {
     color:white;
 }
 
-p:nth-child(1){
+div:nth-child(1){
     background-color: #E67676;
 }
 
-p:nth-child(2){
-    background-color: #F2F062;
-}
-
-p:nth-child(3){
+div:nth-child(2){
     background-color: #A9E6E6;
-}
-p:nth-child(4){
-    background-color: #7692E4;
 }

@@ -1,0 +1,36 @@
+
+* {
+    margin: 0px;
+    padding: 0px;
+}
+
+div {
+    padding: 10px;
+    width: 290px;
+    height: 400px;
+    background-color: #4285F4;
+}
+
+p {
+    text-align: center;
+    padding-top: 30px;
+    font-size: 36px;
+    width: 290px;
+    height: 70px;
+    color:white;
+}
+
+p:nth-child(1){
+    background-color: #E67676;
+}
+
+p:nth-child(2){
+    background-color: #F2F062;
+}
+
+p:nth-child(3){
+    background-color: #A9E6E6;
+}
+p:nth-child(4){
+    background-color: #7692E4;
+}

@@ -1,0 +1,21 @@
+main {
+    width: 600px;
+}
+
+h1 {
+    color: #FF6347;
+}
+
+h2 {
+    color: #8A34E4;
+}
+
+ol {
+    color: #FF78FF;
+    text-decoration-line: underline;
+}
+
+ol li:last-child{
+    color: black;
+    text-decoration-line: underline;
+}

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+    
+<head>
+        <link rel="stylesheet" type="text/css" href="style.css">
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:400,800|PT+Sans" rel="stylesheet">
+</head>
+
+<form action="/my-handling-form-page" method="post">
+
+    <body>
+
+        <div class="container center">
+
+        <div class="header">
+            <h1 class="title">Profil</h1>
+        </div>
+
+        <div class="mid left">
+            <p class="dataheader">Személyes Adatok<p>
+            <label for="name">Név:<span>  *</span></label> <br>
+            <input class="inp_text" type="text" id="name" name="user_name"> <br>
+            
+            <div class="smallmid left">
+                <label for="date">Születési Éved:</label>
+                <input type="text" id="date" name="birth_date" placeholder="pl. 1992" />    
+            </div>
+
+            <div class="smallmid right">
+                <label for="sex">Nemed: </label> <br>
+                <input type="radio" name="sex" value="male">Férfi
+                <input type="radio" name="sex" value="female">Nő
+            </div>
+
+            <div class="checkboxes">
+
+                <label for="brand">Milyen márkákat szeretsz?: </label> <br>
+
+                <div class="collumn left">
+                    <input type="checkbox" name="brand" value="adidas">Adidas <br>
+                    <input type="checkbox" name="brand" value="apple">Apple <br>
+                    <input type="checkbox" name="brand" value="coke">Coca-Cola <br>
+                    <input type="checkbox" name="brand" value="mazda">Mazda <br>
+                    <input type="checkbox" name="brand" value="nike">Nike <br>
+                </div>
+
+                <div class="collumn right">
+                    <input type="checkbox" name="brand" value="opel">Opel <br>
+                    <input type="checkbox" name="brand" value="rayban">Ray-Ban <br>
+                    <input type="checkbox" name="brand" value="starbucks">Starbucks <br>
+                    <input type="checkbox" name="brand" value="tesla">Tesla <br>
+                    <input type="checkbox" name="brand" value="yahoo">Yahoo <br>
+                </div>
+                
+                <p class="dim"> Többet is választhatsz! </p>
+
+            </div>
+
+        </div>
+
+        <div class="mid right">
+            <p class="dataheader">Kapcsolat<p>
+
+                <label for="tel">Telefonszám:<span>  *</span></label> <br>
+                <input class="inp_text" type="text" id="tel" name="phone" placeholder="+36 -- --- ----"> <br>
+    
+                <label for="mail">E-mail cím:<span>  *</span></label> <br>
+                <input class="inp_text" type="text" id="mail" name="e_mail" placeholder="nev@domain.hu"> <br>
+    
+                <label for="fb">Facebook profilod:</label> <br>
+                <input class="inp_text" type="text" id="fb" name="facebook" placeholder="https://faceboook.com/" > <br>
+    
+                <label for="twit">Twitter profilod:</label> <br>
+                <input class="inp_text" type="text" id="twit" name="twitter" placeholder="https://twitter.com/"> <br>
+    
+                <label for="haz">Milyen házban laksz?</label> <br>
+                <select class="inp_text" >
+                        <option value="kertes">Kertes</option>
+                        <option value="tarsas">Társas</option>
+                        <option value="panel">Panel</option>
+                        <option value="hid">Híd alatt</option>
+                </select>
+                
+        </div>
+
+        <div class="bottom">
+
+            <label for="comments">Bemutatkozás<span>  *</span></label><br>
+            <textarea name="comments" id="comments"></textarea>
+
+            <label for="upload">CV feltöltése</label><br>
+            <button item-width="130px" type="button" id="upload">FILE KIVÁLASZTÁSA</button>
+            
+            <input type="checkbox" name="szerzodes" value="yes">Elfogadom
+            <a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"> a felhasználási feltételeket </a><br>
+
+            <button class="button left blue" type="button" id="save">Mentés</button>
+
+            <button class="button right" type="button" id="save">Űrlap törlése</button>
+
+        </div>
+
+        </div>
+
+    </body>
+
+</form>
+
+</html>

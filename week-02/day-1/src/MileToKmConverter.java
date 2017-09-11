@@ -1,0 +1,15 @@
+import java.util.Scanner;
+
+public class MileToKmConverter {
+    public static void main(String[] args) {
+        // Write a program that asks for an integer that is a distance in kilometers,
+        // then it converts that value to miles and prints it
+        Scanner scanner = new Scanner(System.in);
+
+        System.out.println("Give me a distance in km");
+        int km = scanner.nextInt();
+        double mile = km*0.621371192;
+        System.out.printf("%.2f", mile);
+
+    }
+}

@@ -1,14 +1,17 @@
 public class SwapElements {
     public static void main(String[] args) {
-        // - Create an array variable named `ai`
-        //   with the following content: `[3, 4, 5, 6, 7]`
-        // - Print the sum of the elements in `ai`
+        // - Create an array variable named `abc`
+        //   with the following content: `["first", "second", "third"]`
+        // - Swap the first and the third element of `abc`
 
-        int[] ai = {3, 4, 5, 6, 7};
-        int sum = 0;
-        for (int i=0; i < ai.length; i++) {
-            sum += ai[i];
+        String[] abc = {"first", "second", "third"};
+
+        String temp = abc[0];
+        abc[0] = abc[2];
+        abc[2] = temp;
+
+        for (int i=0; i < abc.length; i++) {
+            System.out.print(abc[i]+ " ");
         }
-        System.out.print(sum);
     }
 }

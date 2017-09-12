@@ -16,7 +16,7 @@ public class AverageOfInput {
         int d = scanner.nextInt();
         int e = scanner.nextInt();
 
-        int sum = a+b+c+d+e;
+        int sum = a + b + c + d + e;
 
         int average = sum / 5;
 

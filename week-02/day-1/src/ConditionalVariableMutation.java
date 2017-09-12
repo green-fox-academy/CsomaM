@@ -16,9 +16,6 @@ public class ConditionalVariableMutation {
 
         System.out.println(out);
 
-
-
-
         int b = 13;
         String out2 = "";
 
@@ -34,10 +31,7 @@ public class ConditionalVariableMutation {
             out2 = "Less!";
         }
 
-
         System.out.println(out2);
-
-
 
         int c = 123;
         int credits = 100;
@@ -58,9 +52,6 @@ public class ConditionalVariableMutation {
 
         System.out.println(c);
 
-
-
-
         int d = 8;
         int time = 120;
         String out3 = "";
@@ -78,7 +69,6 @@ public class ConditionalVariableMutation {
         } else {
             out3 = "Run forest run!";
         }
-
 
         System.out.println(out3);
     }

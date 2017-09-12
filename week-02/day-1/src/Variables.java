@@ -34,6 +34,5 @@ public class Variables {
         // Mutate a variable, (redefine its value)
         number = 23;
 
-
     }
 }

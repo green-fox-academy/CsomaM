@@ -10,7 +10,6 @@ public class Conditionals {
             System.out.println("Yaaay! The value of the \"a\" variable is 8"); // This block will NOT run
         }
 
-
         int b = 20;
 
         if (b < 10) {
@@ -18,7 +17,6 @@ public class Conditionals {
         } else {
             System.out.println("Yaaay! The value of the \"b\" variable is higher than 10"); // This block will run
         }
-
 
         int c = 15;
 
@@ -29,7 +27,6 @@ public class Conditionals {
         } else {
             System.out.println("Yaaay! The value of the \"b\" variable is higher than 10"); // This block will NOT run
         }
-
 
         boolean thirsty = true;
         boolean hungry = false;

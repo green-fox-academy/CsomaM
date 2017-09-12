@@ -15,7 +15,5 @@ public class AnimalsAndLegs {
         int pigs = scanner.nextInt();
 
         System.out.println(chickens*2 + pigs*4);
-
-
-}
+    }
 }

@@ -7,7 +7,6 @@ public class Reverse {
         // Try to solve this using charAt() first, and optionally anything else after.
         char[] ReverseChars = reversed.toCharArray();
         char[] CorrectChars = reversed.toCharArray();
-        char swap;
         int j = 0;
         for (int i= reversed.length()-1; i >= 0; i--) {
             CorrectChars[j] = ReverseChars[i];

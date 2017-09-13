@@ -36,6 +36,8 @@ public class Calculator {
             result = firstN - secondN;
         } else if (operand.equals("+")) {
             result = firstN + secondN;
+        }else if (operand.equals("%")) {
+            result = firstN % secondN;
         }
 
         System.out.println(result);

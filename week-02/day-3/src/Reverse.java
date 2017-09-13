@@ -13,6 +13,8 @@ public class Reverse {
             j++;
         }
 
-        System.out.println(CorrectChars);
+        reversed = String.valueOf(CorrectChars);
+
+        System.out.println(reversed);
     }
 }

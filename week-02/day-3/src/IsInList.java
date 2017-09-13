@@ -8,7 +8,7 @@ public class IsInList{
         // Print "true" if it contains all, otherwise print "false"
         // Can you do both the different approaches you tried in the previous one?
 
-        if (list.contains(4) == true && list.contains(8) == true && list.contains(12) == true && list.contains(16) == true) {
+        if (list.containsAll(Arrays.asList(4,8,12,16))) {
             System.out.print("true");
         } else {
             System.out.print("false");

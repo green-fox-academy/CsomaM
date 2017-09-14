@@ -3,17 +3,12 @@ import java.util.*;
 public class Unique {
 
     public static void main(String[] args) {
-
-        ArrayList numbers = new ArrayList();
-
         System.out.println("Give me numbers. I will ask for numbers as long as you don't type *.");
-        Fill(numbers);
-
-        System.out.println(numbers);
+        System.out.println(sort(fill()));
 
     }
-
-    static ArrayList <Integer> Fill (ArrayList list) {
+    static ArrayList <Integer> fill () {
+        ArrayList numbers = new ArrayList();
         Scanner sc = new Scanner(System.in);
         String scan ="";
         int n = 0;
@@ -21,12 +16,21 @@ public class Unique {
             scan = sc.next();
             if (!scan.equals("*")) {
                 n = Integer.parseInt(scan);
-                if (!list.contains(n)) {
-                    list.add(n);
-                }
+                numbers.add(n);
             }
         } while (!scan.equals("*"));
-        return (list);
+        return (numbers);
+    }
+
+
+    static ArrayList <Integer> sort (ArrayList list) {
+        ArrayList sorted = new ArrayList();
+        for (int i = 0; i <list.size(); i++) {
+            if (!sorted.contains(list.get(i))) {
+                sorted.add(list.get(i));
+            }
+        }
+        return (sorted);
     }
 
 

@@ -6,7 +6,7 @@ public class Bubble {
         String scan ="";
         ArrayList numbers = new ArrayList();
 
-        System.out.println("Do you want the list ordered?");
+        System.out.println("Do you want the list reversed?");
         scan = sc.next();
 
         boolean ordered = false;
@@ -19,16 +19,6 @@ public class Bubble {
         System.out.println("Give me numbers and I'm going to sort them. I will ask for numbers as long as you don't type *.");
         Fill(numbers, ordered);
         System.out.println(numbers);
-
-        System.out.println("Do you want it reversed? Y/N");
-        scan = sc.next();
-        if (scan.equals("Y") || scan.equals("y")) {
-            Collections.reverse(numbers);
-        } else {
-            System.out.println("As you wish.");
-        }
-        System.out.println(numbers);
-
     }
 
     private static ArrayList <Integer> Fill (ArrayList list, boolean answer) {
@@ -42,9 +32,9 @@ public class Bubble {
                 list.add(n);
             }
         } while (!scan.equals("*"));
+        Collections.sort(list);
         if (answer) {
-            Collections.sort(list);
-            System.out.println(list);
+            Collections.reverse(list);
         }
         return (list);
     }

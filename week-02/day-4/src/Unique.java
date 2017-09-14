@@ -10,16 +10,11 @@ public class Unique {
         int n = 0;
         int duplicates = 0;
 
-
         do {
             scan = sc.next();
-            if (scan.equals("*")) {
-                duplicates++;
-            } else {
+            if (!scan.equals("*")) {
                 n = Integer.parseInt(scan);
-                if (numbers.contains(n)) {
-                    duplicates++;
-                } else {
+                if (!numbers.contains(n)) {
                     numbers.add(n);
                 }
             }

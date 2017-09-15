@@ -5,9 +5,7 @@ public class subint {
     public static void main(String[] args) {
         System.out.println("Give me a number then give me a list of numbers. I will ask for numbers as long as you don't type *.");
         int n = findpls();
-        System.out.println(n);
         ArrayList arr = fill();
-        System.out.println(arr);
         ArrayList index = find(n, arr);
         System.out.println(index);
 

@@ -22,12 +22,11 @@ public class GuessTheNumber {
 
     static int infoReq () {
         Scanner sc = new Scanner(System.in);
-        System.out.println("I'm thinking of a number between 0 and the intervall you give me. You have 5 lives.");
+        System.out.println("I'm thinking of a number between 0 and the interval you give me. You have 5 lives.");
         int interval = 0;
         interval = sc.nextInt();
         return interval;
     }
-
 
     static int randomGen (int interval) {
         Random r = new Random();

@@ -3,7 +3,7 @@ import java.util.*;
 public class PalindromeBuilder {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Gime me a string and I'll make it a palindrome.");
+        System.out.println("Give me a string and I'll make it a palindrome.");
         String input = sc.nextLine();
         System.out.println(palGen(input));
     }

@@ -4,7 +4,7 @@ import java.util.Scanner;
 public class Anagram {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        System.out.println("Gime me 2 strings and I'll compare them and tell you if they are anagrams.");
+        System.out.println("Give me 2 strings and I'll compare them and tell you if they are anagrams.");
         String s1 = sc.nextLine();
         String s2 = sc.nextLine();
         if (anagram(s1, s2) == true){

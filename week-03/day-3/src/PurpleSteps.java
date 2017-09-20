@@ -9,8 +9,16 @@ public class PurpleSteps {
     public static void mainDraw(Graphics graphics){
       // reproduce this:
       // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/purple-steps/r3.png]
+        for (int i = 0; i < 17; i++) {
+            drawSquare(graphics, i);
+        }
+    }
 
-
+    static void drawSquare(Graphics g1, int i) {
+        g1.setColor(Color.black);
+        g1.drawRect(i*20, i*20, 20, 20);
+        g1.setColor(Color.MAGENTA);
+        g1.fillRect(i*20, i*20, 20, 20);
 
     }
 

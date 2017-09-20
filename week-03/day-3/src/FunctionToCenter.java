@@ -11,9 +11,21 @@ public class FunctionToCenter {
       // the x and y coordinates of the line's starting point
       // and draws a line from that point to the center of the canvas.
       // fill the canvas with lines from the edges, every 20 px, to the center.
+        for (int i = 1; i < 17 ; i++) {
+            for (int j = 1; j < 17 ; j++) {
+                drawToCenter(graphics, i, j);
+            }
+
+        }
 
 
+    }
 
+    static void drawToCenter (Graphics g, int x, int y) {
+        g.drawLine(20,20*y,160, 171);
+        g.drawLine(20*x,20,160, 171);
+        g.drawLine(320,20*y,160, 171);
+        g.drawLine(20*x,320,160, 171);
     }
 
 //    Don't touch the code below

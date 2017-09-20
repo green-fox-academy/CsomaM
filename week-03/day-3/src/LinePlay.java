@@ -9,9 +9,16 @@ public class LinePlay {
     public static void mainDraw(Graphics graphics){
       // reproduce this:
       // [https://github.com/greenfox-academy/teaching-materials/blob/master/workshop/drawing/line-play/r1.png]
+        for (int i = 1; i < 16; i++) {
+                drawLine(graphics, i);
+        }
+    }
 
-
-
+    static void drawLine (Graphics g, int i) {
+        g.setColor(Color.green);
+        g.drawLine(20*i,320,5, 20*i);
+        g.setColor(Color.magenta);
+        g.drawLine(320 - i*20,5,320, 320 - i*20);
     }
 
 //    Don't touch the code below

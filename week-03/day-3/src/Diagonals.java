@@ -8,9 +8,10 @@ public class Diagonals {
 
     public static void mainDraw(Graphics graphics){
       // draw the canvas' diagonals in green.
-
-
-
+        graphics.setColor(Color.green);
+        graphics.drawLine(0,0, 320,343);
+        graphics.setColor(Color.green);
+        graphics.drawLine(320,0, 0,343);
     }
 
 //    Don't touch the code below

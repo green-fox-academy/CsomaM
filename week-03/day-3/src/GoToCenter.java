@@ -11,10 +11,16 @@ public class GoToCenter {
       // the x and y coordinates of the line's starting point
       // and draws a line from that point to the center of the canvas.
       // draw 3 lines with that function.
-
-
+        drawToCenter(graphics, 5,5);
+        drawToCenter(graphics, 100,200);
+        drawToCenter(graphics, 200,300);
 
     }
+
+    static void drawToCenter (Graphics g, int x, int y) {
+        g.drawLine(x,y,160, 171);
+    }
+
 
 //    Don't touch the code below
     static int WIDTH = 320;

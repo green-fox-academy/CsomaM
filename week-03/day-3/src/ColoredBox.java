@@ -8,9 +8,15 @@ public class ColoredBox {
 
     public static void mainDraw(Graphics graphics){
       // draw a box that has different colored lines on each edge.
-
-
-
+        graphics.drawRect(5, 5, 295,295);
+        graphics.setColor(Color.red);
+        graphics.drawLine(5,5, 300,5);
+        graphics.setColor(Color.blue);
+        graphics.drawLine(5,5, 5,300);
+        graphics.setColor(Color.green);
+        graphics.drawLine(300,300, 5,300);
+        graphics.setColor(Color.cyan);
+        graphics.drawLine(300,300, 300,5);
     }
 
 //    Don't touch the code below

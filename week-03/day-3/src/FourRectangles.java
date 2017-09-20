@@ -8,9 +8,14 @@ public class FourRectangles {
 
     public static void mainDraw(Graphics graphics){
       // draw four different size and color rectangles.
+        drawSquare(graphics,10,10, 40,50);
+        drawSquare(graphics,15,30, 100,150);
+        drawSquare(graphics,200,100, 80,10);
+        drawSquare(graphics,50,5, 10,200);
+    }
 
-
-
+    static void drawSquare (Graphics g, int x, int y, int width, int height) {
+        g.drawRect(x,y,width,height);
     }
 
 //    Don't touch the code below

@@ -16,7 +16,7 @@ public class PurpleSteps3d {
 
     static void drawSquare(Graphics g1, int i) {
         g1.setColor(Color.MAGENTA);
-        g1.fillRect(i*10, i*10, i*10, i*10);
+        g1.fillRect(10 + (i-1)*10, 10 + (i-1)*10, i*10, i*10);
 
     }
 

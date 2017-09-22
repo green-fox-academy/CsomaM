@@ -4,3 +4,25 @@
 // previous two values, so the whole sequence is: 0, 1, 1, 2, 3, 5, 8, 13, 21
 // and so on. Define a recursive fibonacci(n) method that returns the nth
 // fibonacci number, with n=0 representing the start of the sequence.
+
+import java.util.Scanner;
+
+public class Fibonacci {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Give me which fibonacci number you want.");
+        int n = sc.nextInt();
+        System.out.println("The Nth fibonacci number is: " + fibonacci (n));
+    }
+
+    static int fibonacci(int n) {
+        if(n == 0) {
+            return 0;
+        } else if(n == 1) {
+            return 1;
+        } else {
+            return fibonacci(n - 1) + fibonacci(n - 2);
+        }
+    }
+}

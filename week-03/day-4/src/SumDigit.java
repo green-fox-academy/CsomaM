@@ -15,10 +15,11 @@ public class SumDigit {
 
     static int sumDigits(int n) {
         {
+            int sum = 0;
             if ((n/10) == 0) {
                 return 1;
             } else {
-                return 1 + sumDigits(n/10);
+                return sum+= n % 10 + sumDigits(n/10);
             }
         }
     }

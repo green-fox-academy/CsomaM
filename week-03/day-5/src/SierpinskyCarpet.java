@@ -16,7 +16,6 @@ public class SierpinskyCarpet {
     }
 
 
-
     static void carpet(Graphics graphics, int n, int x, int y, int size) {
         int red = r.nextInt(255) + 1 ;
         int green =r.nextInt(255) + 1 ;

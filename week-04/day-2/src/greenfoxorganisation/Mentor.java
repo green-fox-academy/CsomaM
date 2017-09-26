@@ -1,3 +1,5 @@
+package greenfoxorganisation;
+
 public class Mentor extends Person {
 
     protected String level;
@@ -22,7 +24,7 @@ public class Mentor extends Person {
     }
 
     @Override
-    public void introduction() {
+    public void introduce() {
         System.out.println("Hi, I'm " + name + ", " + age + " year old " + gender + ", " + level + " mentor." );
     }
 }

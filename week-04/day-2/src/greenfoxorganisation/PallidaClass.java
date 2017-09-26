@@ -1,3 +1,5 @@
+package greenfoxorganisation;
+
 import java.util.ArrayList;
 
 public class PallidaClass {
@@ -8,13 +10,15 @@ public class PallidaClass {
 
     public PallidaClass (String className) {
         this.className = className;
+        students = new ArrayList<>();
+        mentors = new ArrayList<>();
     }
 
     public void addStudent (Student student) {
         students.add(student);
     }
 
-    public void addMentort (Mentor mentor) {
+    public void addMentor (Mentor mentor) {
         mentors.add(mentor);
     }
 

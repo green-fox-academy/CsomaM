@@ -1,4 +1,7 @@
+package greenfoxorganisation;
+
 public class Person {
+
     protected String name;
     protected int age;
     protected String gender;
@@ -15,12 +18,11 @@ public class Person {
         this.gender = "Female";
     }
 
-    public void introduction () {
+    public void introduce () {
         System.out.println("Hi, I'm " + name + ", " + age + " year old " + gender);
     }
 
     public void getGoal () {
         System.out.println("My goal is: Live for the moment!");
     }
-
 }

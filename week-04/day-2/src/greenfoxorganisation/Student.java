@@ -1,14 +1,16 @@
+package greenfoxorganisation;
+
 public class Student extends Person {
 
     protected String previousOrganisation;
     protected int skippedDays;
 
-    public Student (String name, int age, String gender, String previousOrganisation, int skippedDays) {
+    public Student (String name, int age, String gender, String previousOrganisation) {
         this.name = name;
         this.age = age;
         this.gender = gender;
         this.previousOrganisation = previousOrganisation;
-        this.skippedDays = skippedDays;
+        this.skippedDays = 0;
     }
 
     public Student () {
@@ -29,8 +31,7 @@ public class Student extends Person {
     }
 
     @Override
-    public void introduction() {
+    public void introduce() {
         System.out.println("Hi, I'm " + name + ", " + age + " year old " + gender + " from " + previousOrganisation + " who skipped " + skippedDays + " Days days from the course already.");
     }
-
 }

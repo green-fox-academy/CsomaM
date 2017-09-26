@@ -30,7 +30,7 @@ public class Student extends Person {
 
     @Override
     public void introduction() {
-        System.out.println("Hi, I'm " + name + ", " + age + " year old " + gender + "from " + previousOrganisation + "who skipped skipped " + skippedDays + "Days days from the course already.");
+        System.out.println("Hi, I'm " + name + ", " + age + " year old " + gender + " from " + previousOrganisation + " who skipped " + skippedDays + " Days days from the course already.");
     }
 
 }

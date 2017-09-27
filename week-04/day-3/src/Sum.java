@@ -10,8 +10,13 @@ public class Sum {
 
     public int getSum () {
         int sum = 0;
-        for (int i = 0; i < list.size(); i++) {
-            sum += list.get(i);
-        } return sum;
+        try {
+            for (int i = 0; i < list.size(); i++) {
+                sum += list.get(i);
+            }
+            return sum;
+        } catch (NullPointerException n) {
+            return 0;
+        }
     }
 }

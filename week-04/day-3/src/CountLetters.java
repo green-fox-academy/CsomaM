@@ -16,7 +16,7 @@ public class CountLetters {
             if (!dictionary.containsKey(input[i])) {
                 dictionary.put(input[i], 1);
             } else {
-                dictionary.put(input[i], dictionary.get(input[i]) + 1);
+                dictionary.put(input[i], dictionary.get(input[i]) + 1 );
             }
         }
         return dictionary;

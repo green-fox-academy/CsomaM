@@ -7,15 +7,11 @@ import java.util.Random;
 
 public class Board extends JComponent implements KeyListener {
 
-    int playerPosX;
-    int playerPosY;
-    int direction;
-    int round;
-
     Hero player = new Hero();
-
-    ArrayList<Integer> skelPOS = new ArrayList<>();
-    ArrayList<Integer> bossPOS = new ArrayList<>();
+    Boss boss = new Boss();
+    Monster skeleton1 = new Monster();
+    Monster skeleton2 = new Monster();
+    Monster skeleton3 = new Monster();
 
     int[][] walls = new int[][]{
             { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0 },
@@ -31,17 +27,10 @@ public class Board extends JComponent implements KeyListener {
     };
 
     public Board() {
-        playerPosX = 0;
-        playerPosY = 0;
-        direction = 0;
-        round = 0;
-
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
         setVisible(true);
     }
-
-
 
     @Override
     public void paint(Graphics graphics) {
@@ -51,7 +40,6 @@ public class Board extends JComponent implements KeyListener {
         // you can create and draw an image using the class below e.g.
         PositionedImage floor = new PositionedImage("assets/floor.png", 0, 0);
         PositionedImage wall = new PositionedImage("assets/wall.png", 0, 0);
-
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
@@ -66,9 +54,11 @@ public class Board extends JComponent implements KeyListener {
             }
         }
 
-
         player.draw(graphics);
-
+        boss.draw(graphics);
+        skeleton1.draw(graphics);
+        skeleton2.draw(graphics);
+        skeleton3.draw(graphics);
     }
 
     public static void main(String[] args) {
@@ -90,12 +80,10 @@ public class Board extends JComponent implements KeyListener {
     // To be a KeyListener the class needs to have these 3 methods in it
     @Override
     public void keyTyped(KeyEvent e) {
-
     }
 
     @Override
     public void keyPressed(KeyEvent e) {
-
     }
 
     // But actually we can use just this one for our goals here
@@ -103,13 +91,13 @@ public class Board extends JComponent implements KeyListener {
     public void keyReleased(KeyEvent e) {
         // When the up or down keys hit, we change the position of our box
         if (e.getKeyCode() == KeyEvent.VK_UP) {
-            player.moveUP(walls);
+            player.moveUP();
         } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
-            player.moveDOWN(walls);
+            player.moveDOWN();
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
-            player.moveLEFT(walls);
+            player.moveLEFT();
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
-            player.moveRIGHT(walls);
+            player.moveRIGHT();
         }
         // and redraw to have a new picture with the new coordinates
         repaint();

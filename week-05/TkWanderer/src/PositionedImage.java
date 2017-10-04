@@ -6,18 +6,21 @@ import java.io.IOException;
 
 public class PositionedImage {
 
-    BufferedImage image;
-    int posX, posY;
+    protected BufferedImage image;
+    protected int posX, posY;
 
     public PositionedImage(String filename, int posX, int posY) {
         this.posX = posX;
         this.posY = posY;
+        setImage(filename);
+    }
+
+    public void setImage (String fileName) {
         try {
-            image = ImageIO.read(new File(filename));
+            this.image = ImageIO.read(new File(fileName));
         } catch (IOException e) {
             e.printStackTrace();
         }
-
     }
 
     public void draw(Graphics graphics) {

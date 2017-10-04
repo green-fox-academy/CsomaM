@@ -3,15 +3,17 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Random;
 
 public class Board extends JComponent implements KeyListener {
 
+    Random r = new Random();
     Hero player = new Hero();
     Boss boss = new Boss();
-    Monster skeleton1 = new Monster();
-    Monster skeleton2 = new Monster();
-    Monster skeleton3 = new Monster();
+    int monsterN = r.nextInt(3) + 3;
+    ArrayList<Monster> monsters = new ArrayList<>(monsterN);
+    int round = 1;
 
     int[][] walls = new int[][]{
             { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0 },
@@ -27,19 +29,26 @@ public class Board extends JComponent implements KeyListener {
     };
 
     public Board() {
+        for (int i = 0; i < monsterN; i++) {
+            Monster m = new Monster();
+            monsters.add(m);
+        }
+
         // set the size of your draw board
         setPreferredSize(new Dimension(720, 720));
         setVisible(true);
+
     }
+
+
 
     @Override
     public void paint(Graphics graphics) {
-        Random r = new Random();
         super.paint(graphics);
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
-        PositionedImage floor = new PositionedImage("assets/floor.png", 0, 0);
-        PositionedImage wall = new PositionedImage("assets/wall.png", 0, 0);
+        Map floor = new Map("assets/floor.png", 0, 0);
+        Map wall = new Map("assets/wall.png", 0, 0);
 
         for (int i = 0; i < 10; i++) {
             for (int j = 0; j < 10; j++) {
@@ -54,11 +63,18 @@ public class Board extends JComponent implements KeyListener {
             }
         }
 
+        for (int i = 0; i < monsterN; i++) {
+                monsters.get(i).draw(graphics);
+        }
+
+        if (round % 2 == 0) {
+            for (int i = 0; i < monsterN; i++) {
+                monsters.get(i).randomMove();
+            }
+        }
+
         player.draw(graphics);
         boss.draw(graphics);
-        skeleton1.draw(graphics);
-        skeleton2.draw(graphics);
-        skeleton3.draw(graphics);
     }
 
     public static void main(String[] args) {
@@ -92,14 +108,19 @@ public class Board extends JComponent implements KeyListener {
         // When the up or down keys hit, we change the position of our box
         if (e.getKeyCode() == KeyEvent.VK_UP) {
             player.moveUP();
+            round ++;
         } else if(e.getKeyCode() == KeyEvent.VK_DOWN) {
             player.moveDOWN();
+            round ++;
         } else if (e.getKeyCode() == KeyEvent.VK_LEFT) {
             player.moveLEFT();
+            round ++;
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             player.moveRIGHT();
+            round ++;
         }
         // and redraw to have a new picture with the new coordinates
         repaint();
     }
 }
+

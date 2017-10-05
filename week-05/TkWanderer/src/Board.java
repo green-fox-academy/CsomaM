@@ -3,78 +3,53 @@ import java.awt.*;
 import java.awt.event.KeyEvent;
 import java.awt.event.KeyListener;
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.Random;
 
 public class Board extends JComponent implements KeyListener {
 
     Random r = new Random();
-    Hero player = new Hero();
+    Hero player = new Hero("player");
     Boss boss = new Boss();
     int monsterN = r.nextInt(3) + 3;
-    ArrayList<Monster> monsters = new ArrayList<>(monsterN);
+    ArrayList<Character> monsters = new ArrayList<>();
     int round = 1;
-
-    int[][] walls = new int[][]{
-            { 0, 0, 0, 1, 0, 1, 0, 0, 0, 0 },
-            { 0, 0, 0, 1, 0, 1, 0, 1, 1, 0 },
-            { 0, 1, 1, 1, 0, 1, 0, 1, 1, 0 },
-            { 0, 0, 0, 0, 0, 1, 0, 0, 0, 0 },
-            { 1, 1, 1, 1, 0, 1, 1, 1, 1, 0 },
-            { 0, 1, 0, 1, 0, 0, 0, 0, 1, 0 },
-            { 0, 1, 0, 1, 0, 1, 1, 0, 1, 0 },
-            { 0, 0, 0, 0, 0, 1, 1, 0, 1, 0 },
-            { 0, 1, 1, 1, 0, 0, 0, 0, 1, 0 },
-            { 0, 0, 0, 1, 0, 1, 1, 0, 1, 0 }
-    };
+    Map map = new Map();
 
     public Board() {
         for (int i = 0; i < monsterN; i++) {
             Monster m = new Monster();
             monsters.add(m);
         }
-
+        monsters.add(boss);
         // set the size of your draw board
-        setPreferredSize(new Dimension(720, 720));
+        setPreferredSize(new Dimension(720, 760));
         setVisible(true);
-
     }
-
-
 
     @Override
     public void paint(Graphics graphics) {
         super.paint(graphics);
         // here you have a 720x720 canvas
         // you can create and draw an image using the class below e.g.
-        Map floor = new Map("assets/floor.png", 0, 0);
-        Map wall = new Map("assets/wall.png", 0, 0);
-
-        for (int i = 0; i < 10; i++) {
-            for (int j = 0; j < 10; j++) {
-                floor.posX = j;
-                floor.posY = i;
-                floor.draw(graphics);
-                if (walls[i][j] == 1) {
-                    wall.posX = j;
-                    wall.posY = i;
-                    wall.draw(graphics);
-                }
-            }
-        }
-
-        for (int i = 0; i < monsterN; i++) {
-                monsters.get(i).draw(graphics);
-        }
-
+        map.drawMap(graphics);
         if (round % 2 == 0) {
-            for (int i = 0; i < monsterN; i++) {
-                monsters.get(i).randomMove();
+            for (int i = 0; i < monsters.size(); i++) {
+                if (!monsters.get(i).isAtked())
+                    monsters.get(i).randomMove();
             }
         }
-
-        player.draw(graphics);
-        boss.draw(graphics);
+        for (int i = 0; i < monsters.size(); i++) {
+            if (!monsters.get(i).isDead()) {
+                monsters.get(i).draw(graphics);
+            } else {
+                monsters.get(i).kill();
+            }
+        }
+        HUD hud = new HUD(player);
+        if (player.getCurrentHp() > 0) {
+            player.draw(graphics);
+            player.drawText(graphics, hud.display());
+        }
     }
 
     public static void main(String[] args) {
@@ -118,6 +93,19 @@ public class Board extends JComponent implements KeyListener {
         } else if (e.getKeyCode() == KeyEvent.VK_RIGHT) {
             player.moveRIGHT();
             round ++;
+        } else if (e.getKeyCode() == KeyEvent.VK_SPACE) {
+            for (int i = 0; i < monsterN; i++) {
+                if (monsters.get(i).getPosX() == player.getPosX() && monsters.get(i).getPosY() == player.getPosY() && !monsters.get(i).isDead()) {
+                    monsters.get(i).underATK();
+                    player.battle(player, monsters.get(i));
+                    player.battle(monsters.get(i), player);
+                }
+            }
+            if (boss.getPosX() == player.getPosX() && boss.getPosY() == player.getPosY() && !boss.isDead()) {
+                boss.underATK();
+                player.battle(player, boss);
+                player.battle(boss, player);
+            }
         }
         // and redraw to have a new picture with the new coordinates
         repaint();

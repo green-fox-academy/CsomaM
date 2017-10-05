@@ -28,4 +28,17 @@ public class PositionedImage {
             graphics.drawImage(image, posX*72, posY*72, null);
         }
     }
+
+    public void drawText (Graphics graphics, String text) {
+        graphics.setFont(new Font("TimesRoman", Font.BOLD, 24));
+        graphics.drawString(text, 0, 750);
+    }
+
+    public int getPosX () {
+        return posX;
+    }
+
+    public int getPosY () {
+        return posY;
+    }
 }

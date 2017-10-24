@@ -1,20 +1,12 @@
 package com.greenfoxacademy.springstart.controllers;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+
+@AllArgsConstructor
+@Getter
 public class Greeting {
 
     private long id;
     private String content;
-
-    public Greeting(long id, String content) {
-        this.id = id;
-        this.content = content;
-    }
-
-    public long getID() {
-        return id;
-    }
-
-    public String getContent() {
-        return content;
-    }
 }

@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
-    <title>Thymeleaf Exercise #</title>
+    <title>Welcome!</title>
     <link rel="stylesheet" th:href="@{/style.css}" />
     <meta charset="utf-8" />
 </head>
 <body>
-    <img src="path/to/animated.gif" />
+<p th:text="${welcomeMSG}"></p>
+<img th:src="@{path}" src="Throw.gif"/>
 </body>
 </html>

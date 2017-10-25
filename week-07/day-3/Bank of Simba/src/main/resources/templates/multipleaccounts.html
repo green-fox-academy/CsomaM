@@ -13,11 +13,11 @@
     <th>Balance</th>
     <th>Type</th>
 </tr>
-<tr th:each= "account, iterationStatus : ${animalList}">
+<tr th:each= "account, iterationStatus : ${animalList}" th:style="${account.animalType} == 'king' ?  'color : red' : 'color : black'" >
     <th th:text="${iterationStatus.count}"></th>
     <th th:text="${account.name}"></th>
     <th th:text="${account.balance} + ${account.currency}" ></th>
-    <th th:text="${account.animalType}"></th>
+    <th th:text="${account.animalType}"  ></th>
 </tr>
 </table>
 

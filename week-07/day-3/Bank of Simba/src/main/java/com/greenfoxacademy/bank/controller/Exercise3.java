@@ -13,10 +13,10 @@ public class Exercise3 {
 
     @RequestMapping("/exercise3")
     public String fillingAccounts (Model model) {
-        BankAccount simba = new BankAccount("Simba", 5000, " lions",  "lion");
+        BankAccount simba = new BankAccount("Simba", 5000, " lions",  "king");
         BankAccount nala = new BankAccount("Nala", 4500, " lions",  "lion");
         BankAccount scar = new BankAccount("Scar", 10000, " hyenas",  "evil-lion");
-        BankAccount mufasa = new BankAccount("Mufasa", 10000, " lions",  "lion");
+        BankAccount mufasa = new BankAccount("Mufasa", 10000, " lions",  "king");
         BankAccount timon = new BankAccount("Timon", 5, " bugs",  "meerkat");
         BankAccount pumba = new BankAccount("Pumba", 5, " bugs",  "warthog");
         List<BankAccount> bankAccounts = Arrays.asList(simba, nala, scar, mufasa, timon, pumba);

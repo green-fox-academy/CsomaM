@@ -8,18 +8,28 @@ public class BankAccount {
     private double balance;
     private String animalType;
     private String currency;
+    private String alignment;
 
-    public BankAccount(String name, double balance, String currency, String animalType) {
+    public BankAccount(String name, double balance, String currency, String animalType, String alignment) {
         this.name = name;
         this.balance = balance;
         this.currency = currency;
         this.animalType = animalType;
+        this.alignment = alignment;
     }
 
     public double doubleDecimal (double number) {
         DecimalFormat df = new DecimalFormat("0.00");
         number = Double.valueOf(df.format(number));
         return number;
+    }
+
+    public String getAlignment() {
+        return alignment;
+    }
+
+    public void setAlignment(String alignment) {
+        this.alignment = alignment;
     }
 
     public String getName() {

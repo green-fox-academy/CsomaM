@@ -10,8 +10,8 @@ public class Exercise1 {
 
     @RequestMapping("/exercise1")
     public String showOneAccount (Model model) {
-        BankAccount testAccount = new BankAccount("Simba", 2000, "zebra",  "lion");
-        String showFields = testAccount.getName() + " " + testAccount.getBalance() + " " + testAccount.getCurrency() + " " + testAccount.getAnimalType();
+        BankAccount testAccount = new BankAccount("Simba", 2000, "zebra",  "lion", "good");
+        String showFields = testAccount.getName() + " " + testAccount.getBalance() + " " + testAccount.getCurrency() + " " + testAccount.getAnimalType() + " " + testAccount.getAlignment();
         model.addAttribute("defaultField", showFields);
         return "showaccount";
     }

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Filling multiple Accounts</title>
+    <link rel="stylesheet" th:href="@{/style.css}" />
+    <meta charset="utf-8" />
+</head>
+<body>
+<ul th:each= "account : ${animalList}">
+    <li th:text="${account.name}"></li>
+    <li th:text="${account.balance} + ${account.currency}" ></li>
+    <li th:text="${account.animalType}"></li>
+</ul>
+
+</body>
+</html>

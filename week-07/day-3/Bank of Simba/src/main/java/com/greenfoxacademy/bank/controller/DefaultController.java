@@ -11,7 +11,7 @@ public class DefaultController {
     @RequestMapping("")
     public String defaultPage (Model model) {
         String str = "Welcome to my webpage!";
-        String path = "Throw.gif";
+        String path = "resources/templates/Throw.gif";
         model.addAttribute("welcomeMSG" , str);
         model.addAttribute("path" , path);
         return "default";

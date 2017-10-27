@@ -8,14 +8,14 @@
 <body >
 <ul>
     <li><a href="index.html">Information</a></li>
+    <li><a href="nutritionStore.html">Nutrition Store</a></li>
 </ul>
 <img src="greenfox.png"/>
 <p th:text="'This is ' + ${fox.name} + ' Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${foxTricks} + ' tricks.'" >
     This is Mr. Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
 <h1>Known tricks</h1>
-<ul th:text="${foxTricks}=='0' ? 'You know no tricks, yet. Go learn some.' : ''">
-    <li>write HTML</li>
-    <li>code in Java</li>
+<ul th:text="${foxTricks}=='0' ? 'You know no tricks, yet. Go learn some.' : ''" >
+    <li></li>
 </ul>
 </body>
 </html>

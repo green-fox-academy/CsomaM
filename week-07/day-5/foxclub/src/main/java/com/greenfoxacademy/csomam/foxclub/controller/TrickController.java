@@ -8,32 +8,25 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.thymeleaf.expression.Arrays;
-
-import java.util.List;
 
 @Controller
-public class NutritionController {
+public class TrickController {
 
     @Autowired
     Fox fox;
 
-    List<String> foods = java.util.Arrays.asList("pizza", "gyros", "hamburger");
-    List<String> drinks = java.util.Arrays.asList("lemonade", "beer", "coke");
+    @Autowired
+    Trick trick;
 
-    @RequestMapping("/nutritionStore")
+    @RequestMapping("/trickCenter")
     public String nutritionStorePage (Model model) {
-        model.addAttribute("foods", foods);
-        model.addAttribute("drinks", drinks);
-        model.addAttribute("fox", fox);
-        return "nutritionStore";
+        model.addAttribute("oldTrick", trick);
+        return "trickCenter";
     }
 
-    @PostMapping("/save")
-    public String addFoodAndDrink(String food, String drink) {
-        this.fox.setFood(food);
-        this.fox.setDrink(drink);
+    @PostMapping("/learn")
+    public String addTrick(@ModelAttribute Trick trick) {
+        this.fox.setTricks(trick.getTrick());
         return "redirect:/";
     }
-
 }

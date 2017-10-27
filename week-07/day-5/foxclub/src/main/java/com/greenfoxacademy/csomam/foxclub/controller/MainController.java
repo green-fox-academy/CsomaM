@@ -14,7 +14,7 @@ public class MainController
     @Autowired
     Fox fox;
 
-    @RequestMapping({"", "index"})
+    @RequestMapping({"", "index", "/"})
     public String indexPage(Model model){
         int trickNum;
         if (fox.getTricks() == null) {

@@ -31,8 +31,8 @@ public class Fox {
         return tricks;
     }
 
-    public void setTricks(List<String> tricks) {
-        this.tricks = tricks;
+    public void setTricks(String trick) {
+        this.tricks.add(trick);
     }
 
     public String getFood() {
@@ -49,15 +49,5 @@ public class Fox {
 
     public void setDrink(String drink) {
         this.drink = drink;
-    }
-
-    @Override
-    public String toString() {
-        return "Fox{" +
-                "name='" + name + '\'' +
-                ", tricks=" + tricks +
-                ", food='" + food + '\'' +
-                ", drink='" + drink + '\'' +
-                '}';
     }
 }

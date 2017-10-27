@@ -14,8 +14,13 @@
 <p th:text="'This is ' + ${fox.name} + ' Currently living on ' + ${fox.food} + ' and ' + ${fox.drink} + '. He knows ' + ${foxTricks} + ' tricks.'" >
     This is Mr. Fox. Currently living on pizza and lemonade. He knows 2 tricks.</p>
 <h1>Known tricks</h1>
-<ul th:text="${foxTricks}=='0' ? 'You know no tricks, yet. Go learn some.' : ''" >
-    <li></li>
-</ul>
+<div th:if="${foxTricks}=='0'">
+    <p>You know no tricks, yet. Go learn some.</p>
+</div>
+<div th:unless="${foxTricks}=='0'">
+    <ul th:each="trick : ${fox.tricks}" >
+        <li th:text="${trick}"></li>
+    </ul>
+</div>
 </body>
 </html>

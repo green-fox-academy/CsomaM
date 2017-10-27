@@ -12,12 +12,12 @@
 </ul>
 <form action="#" th:action="@{/save}" th:object="${fox}" method="post">
     <label for="food">Food</label>
-    <select id="food">
-        <option value="salad">Salad</option>
+    <select id="food" th:field="${fox.food}">
+        <option th:each="food : ${foods}" th:value="${food}" th:text="${food}">Salad</option>
     </select>
     <label for="drink">Drink</label>
-    <select id="drink">
-        <option value="water">Water</option>
+    <select id="drink" th:field="${fox.drink}">
+        <option th:each="drink : ${drinks}" th:value="${drink}" th:text="${drink}">Water</option>
     </select>
     <input type="submit" value="Change" />
 

@@ -2,22 +2,42 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous"/>
     <title>Chinese Reddit</title>
 </head>
-<body>
-    <a href="/add">Add new post</a>
-    <h1>Posts: </h1>
-    <table>
-        <tr>
-            <th>Score</th>
-            <th>Actions</th>
-            <th>Content</th>
-        </tr>
-        <tr>
-            <th>Score</th>
-            <th>Actions</th>
-            <th>Content</th>
-        </tr>
-    </table>
+<body style="background-color: lightgray">
+    <div class="container-fluid" style="background-color: lightgray">
+        <nav class="nav justify-content-center">
+                <a class="nav-link active" href="/add" style="font-size: x-large">Add new post</a>
+        </nav>
+        <h1 style="float: left">Posts:</h1>
+    </div>
+    <div class="container-fluid" style="background-color: lightgray">
+        <table class="table table-hover table-bordered table-striped table-dark">
+            <thead>
+                <tr>
+                    <th scope="col" >Score</th>
+                    <th scope="col" >Actions</th>
+                    <th scope="col" class="col-1">Content</th>
+                    <th scope="col" >Creationdate</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="post : ${posts}">
+                    <th th:text="*{post.score}" scope="row"></th>
+                    <th>
+                        <a th:href="@{'/plus/{id}'(id=${post.id})}" >+</a>
+                        <a th:href="@{'/minus/{id}'(id=${post.id})}">-</a>
+                    </th>
+                    <th th:text="*{post.content}"></th>
+                    <th th:text="*{post.createdOn}"></th>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
 </body>
 </html>

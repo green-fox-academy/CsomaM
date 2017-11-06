@@ -23,22 +23,20 @@ public class TennisGame1 implements TennisGame {
     }
 
     public String getScore() {
-        String score = "";
         if (player1.getScore() == player2.getScore()) {
-            score = drawScore(player1.getScore());
+            return drawScore(player1.getScore());
         }
         else if (player1.getScore() >=4 || player2.getScore() >=4) {
-            score = biggerThanFour();
+            return biggerThanFour();
         }
         else {
-            score = defaultCase(score);
+            return defaultCase();
         }
-        return score;
     }
 
-    public String defaultCase (String score) {
+    public String defaultCase () {
         int tempScore;
-        String tempString = score;
+        String tempString = "";
         for (int i=1; i<3; i++)
         {
             if (i==1) tempScore = player1.getScore();

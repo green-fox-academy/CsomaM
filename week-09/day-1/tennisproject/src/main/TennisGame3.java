@@ -2,35 +2,33 @@ package main;
 
 public class TennisGame3 implements TennisGame {
 
-    private int p2;
-    private int p1;
-    private String p1N;
-    private String p2N;
+    private Player player1;
+    private Player player2;
 
     public TennisGame3(String p1N, String p2N) {
-        this.p1N = p1N;
-        this.p2N = p2N;
+        this.player1 = new Player(p1N, 0);
+        this.player2 = new Player(p2N, 0);
     }
 
     public String getScore() {
         String s;
-        if (p1 < 4 && p2 < 4) {
+        if (player1.getScore() < 4 && player2.getScore() < 4) {
             String[] p = new String[]{"Love", "Fifteen", "Thirty", "Forty"};
-            s = p[p1];
-            return (p1 == p2) ? s + "-All" : s + "-" + p[p2];
+            s = p[player1.getScore()];
+            return (player1.getScore() == player2.getScore()) ? s + "-All" : s + "-" + p[player2.getScore()];
         } else {
-            if (p1 == p2)
+            if (player1.getScore() == player2.getScore())
                 return "Deuce";
-            s = p1 > p2 ? p1N : p2N;
-            return ((p1-p2)*(p1-p2) == 1) ? "Advantage " + s : "Win for " + s;
+            s = player1.getScore() > player2.getScore() ? player1.getName() : player2.getName();
+            return ((player1.getScore()-player2.getScore())*(player1.getScore()-player2.getScore()) == 1) ? "Advantage " + s : "Win for " + s;
         }
     }
 
     public void wonPoint(String playerName) {
         if (playerName == "player1")
-            this.p1 += 1;
+            player1.setScore(1);
         else
-            this.p2 += 1;
+            player2.setScore(1);
 
     }
 

@@ -1,5 +1,7 @@
 package test;
 
+import main.*;
+
 import static org.junit.Assert.*;
 
 import java.util.Arrays;

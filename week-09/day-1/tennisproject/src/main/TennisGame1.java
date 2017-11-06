@@ -1,80 +1,66 @@
 package main;
 
+import java.util.Arrays;
+import java.util.List;
+
 public class TennisGame1 implements TennisGame {
 
-    private int m_score1 = 0;
-    private int m_score2 = 0;
-    private String player1Name;
-    private String player2Name;
+    private Player player1;
+    private Player player2;
+
+    private List<String> scoreNames = Arrays.asList("Love", "Fifteen", "Thirty", "Forty", "Deuce");
 
     public TennisGame1(String player1Name, String player2Name) {
-        this.player1Name = player1Name;
-        this.player2Name = player2Name;
+        this.player1 = new Player(player1Name, 0);
+        this.player2 = new Player(player2Name, 0);
     }
 
     public void wonPoint(String playerName) {
         if (playerName == "player1")
-            m_score1 += 1;
+            player1.setScore(1);
         else
-            m_score2 += 1;
+            player2.setScore(1);
     }
 
     public String getScore() {
         String score = "";
-        int tempScore=0;
-        if (m_score1==m_score2)
-        {
-            switch (m_score1)
-            {
-                case 0:
-                        score = "Love-All";
-                    break;
-                case 1:
-                        score = "Fifteen-All";
-                    break;
-                case 2:
-                        score = "Thirty-All";
-                    break;
-                case 3:
-                        score = "Forty-All";
-                    break;
-                default:
-                        score = "Deuce";
-                    break;
-
-            }
+        if (player1.getScore() == player2.getScore()) {
+            score = drawScore(player1.getScore());
         }
-        else if (m_score1>=4 || m_score2>=4)
-        {
-            int minusResult = m_score1-m_score2;
-            if (minusResult==1) score ="Advantage player1";
-            else if (minusResult ==-1) score ="Advantage player2";
-            else if (minusResult>=2) score = "Win for player1";
-            else score ="Win for player2";
+        else if (player1.getScore() >=4 || player2.getScore() >=4) {
+            score = biggerThanFour();
         }
-        else
-        {
-            for (int i=1; i<3; i++)
-            {
-                if (i==1) tempScore = m_score1;
-                else { score+="-"; tempScore = m_score2;}
-                switch(tempScore)
-                {
-                    case 0:
-                        score+="Love";
-                        break;
-                    case 1:
-                        score+="Fifteen";
-                        break;
-                    case 2:
-                        score+="Thirty";
-                        break;
-                    case 3:
-                        score+="Forty";
-                        break;
-                }
-            }
+        else {
+            score = defaultCase(score);
         }
         return score;
+    }
+
+    public String defaultCase (String score) {
+        int tempScore;
+        String tempString = score;
+        for (int i=1; i<3; i++)
+        {
+            if (i==1) tempScore = player1.getScore();
+            else { tempString += "-"; tempScore = player2.getScore();}
+            tempString += scoreNames.get(tempScore);
+        }
+        return tempString;
+    }
+
+    public String drawScore (int score) {
+        if (score < 4) {
+            return scoreNames.get(score) + "-All";
+        } else {
+            return scoreNames.get(score);
+        }
+    }
+
+    public String biggerThanFour () {
+        int minusResult = player1.getScore() - player2.getScore();
+        if (minusResult==1) return "Advantage player1";
+        else if (minusResult ==-1) return "Advantage player2";
+        else if (minusResult>=2) return "Win for player1";
+        else return "Win for player2";
     }
 }

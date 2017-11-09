@@ -1,26 +1,11 @@
-.idea/**/gradle.xml
+.idea
+out
+*.xml
+*.iml
+*.class
 
-.idea/**/libraries
+# for mac users
+.DS_Store
 
 .gradle
-
-**/build/
-
-gradle-app.setting
-
-!gradle-wrapper.jar
-
-.gradletasknamecache
-
-.idea/
-
-out
-
-
-*.xml
-
-
-*.iml
-
-
-.gf.json
+!gradle-wrapper.properties
